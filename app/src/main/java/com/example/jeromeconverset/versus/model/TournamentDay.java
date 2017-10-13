@@ -6,4 +6,9 @@ package com.example.jeromeconverset.versus.model;
 
 public class TournamentDay {
 
+
+    nom joueur 1
+
+    nom joueur 2
+
 }
