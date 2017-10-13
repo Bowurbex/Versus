@@ -7,8 +7,8 @@ package com.example.jeromeconverset.versus.model;
 public class TournamentDay {
 
 
-    nom joueur 1
+    public String playerOne
 
-    nom joueur 2
+    public String playerTwo
 
 }
