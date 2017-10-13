@@ -7,7 +7,7 @@ package com.example.jeromeconverset.versus.model;
 public class TournamentDay {
 
 
-    public String playerOne
+    public String playerOne;
 
             public String getPlayerOne() {
                 return playerOne;
@@ -17,7 +17,7 @@ public class TournamentDay {
                 this.playerOne = playerOne;
     }
 
-    public String playerTwo
+    public String playerTwo;
 
             public String getPlayerTwo() {
                 return playerTwo;
