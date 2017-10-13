@@ -6,22 +6,24 @@ package com.example.jeromeconverset.versus.model;
 
 public class TournamentDay {
 
+
     public String playerOne;
+
+            public String getPlayerOne() {
+                return playerOne;
+    }
+
+            public void setPlayerOne(String playerOne) {
+                this.playerOne = playerOne;
+    }
+
     public String playerTwo;
 
-    public String getPlayerOne() {
-        return playerOne;
+            public String getPlayerTwo() {
+                return playerTwo;
     }
 
-    public void setPlayerOne(String playerOne) {
-        this.playerOne = playerOne;
-    }
-
-    public String getPlayerTwo() {
-        return playerTwo;
-    }
-
-    public void setPlayerTwo(String playerTwo) {
-        this.playerTwo = playerTwo;
+            public void setPlayerTwo(String playerTwo) {
+                this.playerTwo = playerTwo;
     }
 }
