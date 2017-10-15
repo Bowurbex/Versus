@@ -11,7 +11,7 @@ public class Tournament {
     public int tournamentId;
     public Date startDate;
     public List<TournamentDay> tournamentDays;
-    public int lenghttournament;
+    public int tournamentLenght;
 
     public Tournament(int tournamentId, Date startDate, Date endDate) {
         this.tournamentId = tournamentId;
@@ -41,7 +41,7 @@ public class Tournament {
 
     public void setTournamentDays(List<TournamentDay> tournamentDays) {this.tournamentDays = tournamentDays;}
 
-    public int getLenghttournament() {return lenghttournament;}
+    public int getLenghttournament() {return tournamentLenght;}
 
-    public void setLenghttournament(int lenghttournament) {this.lenghttournament = lenghttournament;}
+    public void setLenghttournament(int lenghttournament) {this.tournamentLenght = lenghttournament;}
 }
