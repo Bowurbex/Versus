@@ -2,6 +2,7 @@ package com.example.jeromeconverset.versus;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 
 import com.example.jeromeconverset.versus.model.Tournament;
 import com.example.jeromeconverset.versus.model.TournamentDay;
@@ -13,6 +14,9 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
     public Tournament tournament;
 
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
         setDatas();
 
         // ICI tu affiches un log avec le nom des 2 joueurs qui ont été ajouté au tournoi tourmanent
+
     }
 
     public void setDatas() {

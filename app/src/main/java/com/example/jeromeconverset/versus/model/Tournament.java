@@ -12,6 +12,15 @@ public class Tournament {
     public Date startDate;
     public Date endDate;
     public List<TournamentDay> tournamentDays;
+    public int lenghttournament;
+
+    public int getLenghttournament() {
+        return lenghttournament;
+    }
+
+    public void setLenghttournament(int lenghttournament) {
+        this.lenghttournament = lenghttournament;
+    }
 
     public Tournament(int tournamentId, Date startDate, Date endDate) {
         this.tournamentId = tournamentId;

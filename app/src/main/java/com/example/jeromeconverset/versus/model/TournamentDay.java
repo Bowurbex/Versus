@@ -17,7 +17,7 @@ public class TournamentDay {
     public void setPlayerOne(String playerOne) {
         this.playerOne = playerOne;
     }
-    
+
     public String getPlayerTwo() {
         return playerTwo;
     }
