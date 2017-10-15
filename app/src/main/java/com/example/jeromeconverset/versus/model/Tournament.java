@@ -13,14 +13,6 @@ public class Tournament {
     public List<TournamentDay> tournamentDays;
     public int lenghttournament;
 
-    public int getLenghttournament() {
-        return lenghttournament;
-    }
-
-    public void setLenghttournament(int lenghttournament) {
-        this.lenghttournament = lenghttournament;
-    }
-
     public Tournament(int tournamentId, Date startDate, Date endDate) {
         this.tournamentId = tournamentId;
         this.startDate = startDate;
@@ -47,7 +39,9 @@ public class Tournament {
         return tournamentDays;
     }
 
-    public void setTournamentDays(List<TournamentDay> tournamentDays) {
-        this.tournamentDays = tournamentDays;
-    }
+    public void setTournamentDays(List<TournamentDay> tournamentDays) {this.tournamentDays = tournamentDays;}
+
+    public int getLenghttournament() {return lenghttournament;}
+
+    public void setLenghttournament(int lenghttournament) {this.lenghttournament = lenghttournament;}
 }
