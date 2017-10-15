@@ -8,10 +8,17 @@ import java.util.List;
  */
 
 public class Tournament {
+
     public int tournamentId;
     public Date startDate;
+    public String player;
     public List<TournamentDay> tournamentDays;
     public int tournamentLenght;
+
+
+    public String getPlayer() {return player;}
+
+    public void setPlayer(String player) {this.player = player;}
 
     public Tournament(int tournamentId, Date startDate, Date endDate) {
         this.tournamentId = tournamentId;
