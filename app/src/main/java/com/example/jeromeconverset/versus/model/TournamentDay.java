@@ -7,21 +7,21 @@ package com.example.jeromeconverset.versus.model;
 public class TournamentDay {
 
 
-    public String playerOne;
-    public String playerTwo;
+    public Player playerOne;
+    public Player playerTwo;
 
-    public String getPlayerOne() {
+    public Player getPlayerOne() {
         return playerOne;
     }
 
-    public void setPlayerOne(String playerOne) {
+    public void setPlayerOne(Player playerOne) {
         this.playerOne = playerOne;
     }
     
-    public String getPlayerTwo() {
+    public Player getPlayerTwo() {
         return playerTwo;
     }
-    public void setPlayerTwo(String playerTwo) {
+    public void setPlayerTwo(Player playerTwo) {
         this.playerTwo = playerTwo;
     }
 }

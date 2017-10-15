@@ -4,11 +4,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 
+import com.example.jeromeconverset.versus.model.Player;
 import com.example.jeromeconverset.versus.model.Tournament;
 import com.example.jeromeconverset.versus.model.TournamentDay;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Iterator;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
@@ -30,7 +32,12 @@ public class MainActivity extends AppCompatActivity {
         // le nom des 2 joueurs
         // et que tu affiches cela dans un log
         // Voici un exemple pour t'aider. Bienvenue dans la POO (Programmation Orientée Objets)
-        Log.d("Exercice1", "J'affiche l'identifiant du tournoi" + tournament.getTournamentId());
+        Log.d("Exercice1", "J'affiche l'identifiant du tournoi " + tournament.getTournamentId());
+
+        for (TournamentDay tDay : tournament.getTournamentDays()) {
+            Log.d("Exercice1", "Joueur 1: " + tDay.getPlayerOne().getPrenom());
+            Log.d("Exercice1", "Joueur 2: " + tDay.getPlayerTwo().getPrenom());
+        }
 
     }
 
@@ -42,8 +49,9 @@ public class MainActivity extends AppCompatActivity {
         // de tournoi
         TournamentDay dayOne = new TournamentDay();
         // pour ce match on initialise le nom des joueurs
-        dayOne.setPlayerOne("J@y");
-        dayOne.setPlayerTwo("BeuC");
+        dayOne.setPlayerOne(new Player("Jérôme", "C"));
+        dayOne.setPlayerTwo(new Player("Séb", "B"));
+
 
         // ici on créé une liste de matchs
         List<TournamentDay> tournamentDays = new ArrayList<>();
