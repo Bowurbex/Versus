@@ -11,14 +11,19 @@ public class Tournament {
 
     public int tournamentId;
     public Date startDate;
-    public String player;
+    public String playerOne;
+    public String playerTwo;
     public List<TournamentDay> tournamentDays;
     public int tournamentLenght;
 
 
-    public String getPlayer() {return player;}
+    public String getPlayer() {return playerOne;}
 
-    public void setPlayer(String player) {this.player = player;}
+    public void setPlayer(String player) {this.playerOne = player;}
+
+    public String getPlayerTwo() {return playerTwo;}
+
+    public void setPlayerTwo(String playerTwo) {this.playerTwo = playerTwo;}
 
     public Tournament(int tournamentId, Date startDate, Date endDate) {
         this.tournamentId = tournamentId;

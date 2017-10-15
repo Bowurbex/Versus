@@ -5,6 +5,7 @@ package com.example.jeromeconverset.versus.model;
  */
 
 public class Player {
+
     public String prenom;
     public String nom;
 
