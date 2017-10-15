@@ -10,7 +10,6 @@ import java.util.List;
 public class Tournament {
     public int tournamentId;
     public Date startDate;
-    public Date endDate;
     public List<TournamentDay> tournamentDays;
     public int lenghttournament;
 
@@ -25,7 +24,7 @@ public class Tournament {
     public Tournament(int tournamentId, Date startDate, Date endDate) {
         this.tournamentId = tournamentId;
         this.startDate = startDate;
-        this.endDate = endDate;
+
     }
 
     public int getTournamentId() {
@@ -42,14 +41,6 @@ public class Tournament {
 
     public void setStartDate(Date startDate) {
         this.startDate = startDate;
-    }
-
-    public Date getEndDate() {
-        return endDate;
-    }
-
-    public void setEndDate(Date endDate) {
-        this.endDate = endDate;
     }
 
     public List<TournamentDay> getTournamentDays() {
