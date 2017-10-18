@@ -68,8 +68,7 @@ public class Tournament {
      */
     public boolean isTournamentOver() {
         int tournamentDaysSize = tournamentDays.size();
-        return tournamentDaysSize == numberOfTournamentDays
-                    && tournamentDays.get(tournamentDaysSize -1).isTournamentDayOver();
+        return tournamentDaysSize == numberOfTournamentDays;
     }
 
     public int getNumberOfTournamentDays() {
