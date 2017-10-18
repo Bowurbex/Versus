@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">Versus</string>
+
+    <string name="btn_start_tournament">Start the tournament</string>
+    <string name="tournament_day_title">This is the day %1$d of the tournament between %2$s and %3$s</string>
 </resources>

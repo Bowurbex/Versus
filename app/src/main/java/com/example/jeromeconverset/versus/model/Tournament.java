@@ -1,5 +1,6 @@
 package com.example.jeromeconverset.versus.model;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -9,65 +10,93 @@ import java.util.List;
 
 public class Tournament {
 
-    public int tournamentId;
-    public Date startDate;
-    public String playerOne;
-    public String playerTwo;
-    public List<TournamentDay> tournamentDays;
+    private int tournamentId;
+    private int numberOfTournamentDays;
+    private Date startDate;
+    private Date endDate;
+    private Player playerOne;
+    private Player playerTwo;
+    private List<TournamentDay> tournamentDays = new ArrayList<>();
 
-    // créer une variable 20 ou 40 pour déterminer nombre matchs tournoi
-    public enum tournamentLenght{}
+    public Tournament(int numberOfTournamentDays) {
+        this.numberOfTournamentDays = numberOfTournamentDays;
+        addTournamentDay();
+    }
 
-        public int getTournamentLenght1() {
-            return tournamentLenght1;
+    public Tournament(int numberOfTournamentDays, Player playerOne, Player playerTwo) {
+        this.numberOfTournamentDays = numberOfTournamentDays;
+        this.playerOne = playerOne;
+        this.playerTwo = playerTwo;
+        addTournamentDay();
+    }
+
+    /**
+     * Add a new tournament day to the tournament
+     */
+    public void addTournamentDay() {
+        int tournamentDayId = 1;
+
+        if(!tournamentDays.isEmpty()) {
+            tournamentDayId = tournamentDays.size() + 1;
         }
 
-        public int getTournamentLenght2() {
-            return tournamentLenght2;
+        // TODO: return an exception if someone tries to add more tournament day than expected by
+        // the variable numberOfTournamentDays
+
+        tournamentDays.add(new TournamentDay(tournamentDayId));
+    }
+
+    /**
+     * This function return the current (last) tournament day
+     * @return  TournamentDay: the current tournament day of the tournament
+     */
+    public TournamentDay getCurrentTournamentDay() {
+        TournamentDay currentTournamentDay = null;
+
+        if(!tournamentDays.isEmpty()) {
+            currentTournamentDay = tournamentDays.get(tournamentDays.size() - 1);
         }
 
-        private int tournamentLenght1 = 20,
-        private int tournamentLenght2 = 40;
-
-
-
-    public Tournament(int tournamentId, Date startDate, Date endDate) {
-        this.tournamentId = tournamentId;
-        this.startDate = startDate;
-
+        return currentTournamentDay;
     }
 
-    public int getTournamentId() {
-        return tournamentId;
+    /**
+     *
+     * @return  boolean
+     *          true if the tournament is over according to the number of tournament days
+     *          false if all tournament days are not set
+     */
+    public boolean isTournamentOver() {
+        int tournamentDaysSize = tournamentDays.size();
+        return tournamentDaysSize == numberOfTournamentDays
+                    && tournamentDays.get(tournamentDaysSize -1).isTournamentDayOver();
     }
 
-    public void setTournamentId(int tournamentId) {
-        this.tournamentId = tournamentId;
+    public int getNumberOfTournamentDays() {
+        return numberOfTournamentDays;
     }
 
-    public Date getStartDate() {
-        return startDate;
+    public Player getPlayerOne() {
+        return playerOne;
     }
 
-    public void setStartDate(Date startDate) {
-        this.startDate = startDate;
+    public void setPlayerOne(Player playerOne) {
+        this.playerOne = playerOne;
     }
 
-    public String getPlayer() {return playerOne;}
+    public Player getPlayerTwo() {
+        return playerTwo;
+    }
 
-    public void setPlayer(String player) {this.playerOne = player;}
-
-    public String getPlayerTwo() {return playerTwo;}
-
-    public void setPlayerTwo(String playerTwo) {this.playerTwo = playerTwo;}
+    public void setPlayerTwo(Player playerTwo) {
+        this.playerTwo = playerTwo;
+    }
 
     public List<TournamentDay> getTournamentDays() {
         return tournamentDays;
     }
 
-    public void setTournamentDays(List<TournamentDay> tournamentDays) {this.tournamentDays = tournamentDays;}
-
-    public int getLenghttournament() {return tournamentLenght;}
-
-    public void setLenghttournament(int lenghttournament) {this.tournamentLenght = lenghttournament;}
+    public void setTournamentDays(List<TournamentDay> tournamentDays) {
+        this.tournamentDays = tournamentDays;
+    }
 }
