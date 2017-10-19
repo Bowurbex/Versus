@@ -16,6 +16,11 @@ public class MainActivity extends AppCompatActivity {
     public TextView textViewContent;
     public Button buttonStartTournament;
     public Button buttonNewTournamentDay;
+    public Button addPlayer;
+
+    public MainActivity(Button addPlayer) {
+        this.addPlayer = addPlayer;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -76,4 +81,6 @@ public class MainActivity extends AppCompatActivity {
     public void startAnotherTournamentDay() {
         tournament.addTournamentDay();
     }
+
 }
+
