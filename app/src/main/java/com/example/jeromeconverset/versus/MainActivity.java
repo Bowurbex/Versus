@@ -20,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
 
     public MainActivity(Button addPlayer) {
         this.addPlayer = addPlayer;
+     addPlayer = (TextView) findViewById(addPlayer)
     }
 
     @Override
@@ -30,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
         textViewContent = (TextView) findViewById(R.id.tv_content);
         buttonStartTournament = (Button) findViewById(R.id.btn_start_tournament);
         buttonNewTournamentDay = (Button) findViewById(R.id.btn_new_tournamentDay);
+
 
         buttonStartTournament.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -68,6 +70,8 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+
+
 
 
     }
