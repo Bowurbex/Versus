@@ -5,17 +5,27 @@ package com.example.jeromeconverset.versus.model;
  */
 
 public class Player {
+    public String firstName;
+    public String lastName;
 
-    public String playerOne;
-    public String playerTwo;
-
-    public String getPlayerOne() {
-        return playerOne;
+    public Player(String firstName) {
+        this.firstName = firstName;
     }
 
-    public void setPlayerOne(String playerOne) {this.playerOne = playerOne;}
+    public String getFirstName() {
+        return firstName;
+    }
 
-    public String getPlayerTwo() {return playerTwo;}
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
 
-    public void setPlayerTwo(String playerTwo) {this.playerTwo = playerTwo;}
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
 }
+

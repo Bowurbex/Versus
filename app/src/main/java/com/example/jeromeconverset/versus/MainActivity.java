@@ -35,13 +35,16 @@ public class MainActivity extends AppCompatActivity {
         buttonStartTournament.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startTournament();
+                String playerOneFirstName = playerOne.getText().toString();
+                String playerTwoFirstName = playerTwo.getText().toString();
+
+                startTournament(playerOneFirstName, playerTwoFirstName);
 
                 textViewContent.setText(
                         String.format(getResources().getString(R.string.tournament_day_title),
                                 tournament.getCurrentTournamentDay().getTournamentDayId(),
-                                tournament.getPlayerOne().getPlayerOne(),
-                                tournament.getPlayerTwo().getPlayerTwo()));
+                                tournament.getPlayerOne().getFirstName(),
+                                tournament.getPlayerTwo().getFirstName()));
 
                 Snackbar.make(v, "CONGRATS you start the tournament", Snackbar.LENGTH_LONG).show();
                 buttonStartTournament.setVisibility(View.GONE);
@@ -55,11 +58,11 @@ public class MainActivity extends AppCompatActivity {
                 String historic = textViewContent.getText().toString();
 
                 if (!tournament.isTournamentOver()) {
-                    tournament.addTournamentDay();
+                    startAnotherTournamentDay();
                     historic += "\n\n" + String.format(getResources().getString(R.string.tournament_day_title),
                             tournament.getCurrentTournamentDay().getTournamentDayId(),
-                            tournament.getPlayerOne().getPlayerOne(),
-                            tournament.getPlayerTwo().getPlayerTwo());
+                            tournament.getPlayerOne().getFirstName(),
+                            tournament.getPlayerTwo().getFirstName());
                     textViewContent.setText(historic);
 
                     Snackbar.make(v, "CONGRATS you start a new day", Snackbar.LENGTH_LONG).show();
@@ -75,9 +78,9 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void startTournament() {
-        Player playerOne = new Player();
-        Player playerTwo = new Player();
+    public void startTournament(String playerOneFirstName, String playerTwoFirstName) {
+        Player playerOne = new Player(playerOneFirstName);
+        Player playerTwo = new Player(playerTwoFirstName);
         tournament = new Tournament(5, playerOne, playerTwo);
     }
 
