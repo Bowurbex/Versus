@@ -17,12 +17,8 @@ public class MainActivity extends AppCompatActivity {
     public TextView textViewContent;
     public Button buttonStartTournament;
     public Button buttonNewTournamentDay;
-    public EditText playerOneFirstName;
-    public EditText playerOneLastName;
-    public EditText playerTwoFirstName;
-    public EditText playerTwolastName;
-
-
+    public EditText PlayerOne;
+    public EditText playerTwo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,10 +28,8 @@ public class MainActivity extends AppCompatActivity {
         textViewContent = (TextView) findViewById(R.id.tv_content);
         buttonStartTournament = (Button) findViewById(R.id.btn_start_tournament);
         buttonNewTournamentDay = (Button) findViewById(R.id.btn_new_tournamentDay);
-        textViewContent = (EditText) playerOneFirstName;
-        textViewContent = (EditText) playerOneLastName;
-        textViewContent = (EditText) playerTwoFirstName;
-        textViewContent = (EditText) playerTwolastName;
+        PlayerOne = (EditText) findViewById(R.id.editTextplayerOne);
+        playerTwo = (EditText) findViewById(R.id.editTextplayerTwo);
 
 
         buttonStartTournament.setOnClickListener(new View.OnClickListener() {
