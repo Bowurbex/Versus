@@ -17,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
     public TextView textViewContent;
     public Button buttonStartTournament;
     public Button buttonNewTournamentDay;
-    public EditText PlayerOne;
+    public EditText playerOne;
     public EditText playerTwo;
 
     @Override
@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
         textViewContent = (TextView) findViewById(R.id.tv_content);
         buttonStartTournament = (Button) findViewById(R.id.btn_start_tournament);
         buttonNewTournamentDay = (Button) findViewById(R.id.btn_new_tournamentDay);
-        PlayerOne = (EditText) findViewById(R.id.editTextplayerOne);
+        playerOne = (EditText) findViewById(R.id.editTextplayerOne);
         playerTwo = (EditText) findViewById(R.id.editTextplayerTwo);
 
 
@@ -40,8 +40,8 @@ public class MainActivity extends AppCompatActivity {
                 textViewContent.setText(
                         String.format(getResources().getString(R.string.tournament_day_title),
                                 tournament.getCurrentTournamentDay().getTournamentDayId(),
-                                tournament.getPlayerOne().getPrenom(),
-                                tournament.getPlayerTwo().getPrenom()));
+                                tournament.getPlayerOne().getPlayerOne(),
+                                tournament.getPlayerTwo().getPlayerTwo()));
 
                 Snackbar.make(v, "CONGRATS you start the tournament", Snackbar.LENGTH_LONG).show();
                 buttonStartTournament.setVisibility(View.GONE);
@@ -58,8 +58,8 @@ public class MainActivity extends AppCompatActivity {
                     tournament.addTournamentDay();
                     historic += "\n\n" + String.format(getResources().getString(R.string.tournament_day_title),
                             tournament.getCurrentTournamentDay().getTournamentDayId(),
-                            tournament.getPlayerOne().getPrenom(),
-                            tournament.getPlayerTwo().getPrenom());
+                            tournament.getPlayerOne().getPlayerOne(),
+                            tournament.getPlayerTwo().getPlayerTwo());
                     textViewContent.setText(historic);
 
                     Snackbar.make(v, "CONGRATS you start a new day", Snackbar.LENGTH_LONG).show();
@@ -76,8 +76,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void startTournament() {
-        Player playerOne = new Player("Jérôme", "C");
-        Player playerTwo = new Player("Sébastien", "B");
+        Player playerOne = new Player();
+        Player playerTwo = new Player();
         tournament = new Tournament(5, playerOne, playerTwo);
     }
 

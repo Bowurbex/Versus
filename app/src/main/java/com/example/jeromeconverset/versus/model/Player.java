@@ -6,27 +6,16 @@ package com.example.jeromeconverset.versus.model;
 
 public class Player {
 
-    public String prenom;
-    public String nom;
+    public String playerOne;
+    public String playerTwo;
 
-    public Player(String prenom, String nom) {
-        this.prenom = prenom;
-        this.nom = nom;
+    public String getPlayerOne() {
+        return playerOne;
     }
 
-    public String getPrenom() {
-        return prenom;
-    }
+    public void setPlayerOne(String playerOne) {this.playerOne = playerOne;}
 
-    public void setPrenom(String prenom) {
-        this.prenom = prenom;
-    }
+    public String getPlayerTwo() {return playerTwo;}
 
-    public String getNom() {
-        return nom;
-    }
-
-    public void setNom(String nom) {
-        this.nom = nom;
-    }
+    public void setPlayerTwo(String playerTwo) {this.playerTwo = playerTwo;}
 }
