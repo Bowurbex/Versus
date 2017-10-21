@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import com.example.jeromeconverset.versus.model.Player;
@@ -16,6 +17,11 @@ public class MainActivity extends AppCompatActivity {
     public TextView textViewContent;
     public Button buttonStartTournament;
     public Button buttonNewTournamentDay;
+    public EditText playerOneFirstName;
+    public EditText playerOneLastName;
+    public EditText playerTwoFirstName;
+    public EditText playerTwolastName;
+
 
 
     @Override
@@ -26,6 +32,10 @@ public class MainActivity extends AppCompatActivity {
         textViewContent = (TextView) findViewById(R.id.tv_content);
         buttonStartTournament = (Button) findViewById(R.id.btn_start_tournament);
         buttonNewTournamentDay = (Button) findViewById(R.id.btn_new_tournamentDay);
+        textViewContent = (EditText) playerOneFirstName;
+        textViewContent = (EditText) playerOneLastName;
+        textViewContent = (EditText) playerTwoFirstName;
+        textViewContent = (EditText) playerTwolastName;
 
 
         buttonStartTournament.setOnClickListener(new View.OnClickListener() {
