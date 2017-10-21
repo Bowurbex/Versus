@@ -19,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
     public Button buttonNewTournamentDay;
     public EditText playerOne;
     public EditText playerTwo;
+    public EditText numberOfTournamentDays;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
         buttonNewTournamentDay = (Button) findViewById(R.id.btn_new_tournamentDay);
         playerOne = (EditText) findViewById(R.id.editTextplayerOne);
         playerTwo = (EditText) findViewById(R.id.editTextplayerTwo);
-
+        numberOfTournamentDays = (EditText) findViewById(R.id.editTextNumberTournamentDays);
 
         buttonStartTournament.setOnClickListener(new View.OnClickListener() {
             @Override
