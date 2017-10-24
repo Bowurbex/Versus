@@ -1,5 +1,6 @@
 package com.example.jeromeconverset.versus;
 
+import android.renderscript.Sampler;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -10,6 +11,8 @@ import android.widget.TextView;
 
 import com.example.jeromeconverset.versus.model.Player;
 import com.example.jeromeconverset.versus.model.Tournament;
+
+import static android.R.attr.value;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -40,6 +43,8 @@ public class MainActivity extends AppCompatActivity {
                 String playerTwoFirstName = playerTwo.getText().toString();
 
                 startTournament(playerOneFirstName, playerTwoFirstName);
+
+                Integer.parseInt(numberOfTournamentDays.getText().toString());
 
                 textViewContent.setText(
                         String.format(getResources().getString(R.string.tournament_day_title),
@@ -82,7 +87,9 @@ public class MainActivity extends AppCompatActivity {
     public void startTournament(String playerOneFirstName, String playerTwoFirstName) {
         Player playerOne = new Player(playerOneFirstName);
         Player playerTwo = new Player(playerTwoFirstName);
-        tournament = new Tournament(5, playerOne, playerTwo);
+        Integer.parseInt(numberOfTournamentDays.getText().toString());
+
+        tournament = new Tournament(value, playerOne, playerTwo);
     }
 
     public void startAnotherTournamentDay() {
