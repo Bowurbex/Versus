@@ -87,7 +87,7 @@ public class MainActivity extends AppCompatActivity {
     public void startTournament(String playerOneFirstName, String playerTwoFirstName) {
         Player playerOne = new Player(playerOneFirstName);
         Player playerTwo = new Player(playerTwoFirstName);
-        Integer.parseInt(numberOfTournamentDays.getText().toString());
+        int value = Integer.parseInt(numberOfTournamentDays.getText().toString());
 
         tournament = new Tournament(value, playerOne, playerTwo);
     }
