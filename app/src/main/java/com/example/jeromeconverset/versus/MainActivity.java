@@ -41,11 +41,9 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 String playerOneFirstName = playerOne.getText().toString();
                 String playerTwoFirstName = playerTwo.getText().toString();
-
-                startTournament(playerOneFirstName, playerTwoFirstName);
-
                 Integer.parseInt(numberOfTournamentDays.getText().toString());
-
+                startTournament(playerOneFirstName, playerTwoFirstName);
+                
                 textViewContent.setText(
                         String.format(getResources().getString(R.string.tournament_day_title),
                                 tournament.getCurrentTournamentDay().getTournamentDayId(),
