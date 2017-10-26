@@ -4,10 +4,7 @@
     <string name="btn_start_tournament">Start the tournament</string>
     <string name="btn_new_tournamentDay">Start new Day</string>
     <string name="tournament_day_title">This is the day %1$d of the tournament between %2$s and %3$s</string>
-
-    <?xml version="1.0" encoding="utf-8"?>
-
-    <string name="app_name">AndroidSpinnerExample</string>
-    <string name="spinner_title">Select Category</string>
+    <string name="Versus">AndroidSpinnerExample</string>
+    <string name="spinner_number_of_tournament_days">Select Number Of Tournament Days</string>
 
 </resources>
