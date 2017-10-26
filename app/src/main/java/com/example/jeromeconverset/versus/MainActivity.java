@@ -12,11 +12,11 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
 import android.app.Activity;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.Toast;
 import android.widget.AdapterView.OnItemSelectedListener;
+import android.widget.AdapterView.OnItemClickListener;
 
 import com.example.jeromeconverset.versus.model.Player;
 import com.example.jeromeconverset.versus.model.Tournament;
@@ -56,8 +56,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         selectnumberOfTournamentDays.add("15 Tournament Days");
         selectnumberOfTournamentDays.add("20 Tournament Days");
 
-        ArrayAdapter dataAdapter = new ArrayAdapter(getActivity(),
-        android.R.layout.simple_spinner_item,selectnumberOfTournamentDays);
+        ArrayAdapter dataAdapter = new ArrayAdapter(this, android.R.layout.simple_spinner_item, selectnumberOfTournamentDays);
 
         dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
