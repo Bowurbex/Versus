@@ -5,6 +5,6 @@
     <string name="btn_new_tournamentDay">Start new Day</string>
     <string name="tournament_day_title">This is the day %1$d of the tournament between %2$s and %3$s</string>
     <string name="Versus">AndroidSpinnerExample</string>
-    <string name="spinner_number_of_tournament_days">Select Number Of Tournament Days</string>
+    <string name="spinner_title">Select Number Of Tournament Days</string>
 
 </resources>

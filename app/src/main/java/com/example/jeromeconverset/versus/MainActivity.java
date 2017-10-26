@@ -5,17 +5,27 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import java.util.ArrayList;
+import java.util.List;
+import android.app.Activity;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
+import android.widget.Toast;
+import android.widget.AdapterView.OnItemSelectedListener;
 
 import com.example.jeromeconverset.versus.model.Player;
 import com.example.jeromeconverset.versus.model.Tournament;
 
+import static android.R.attr.data;
 import static android.R.attr.value;
 
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
     public Tournament tournament;
     public TextView textViewContent;
     public Button buttonStartTournament;
@@ -35,6 +45,23 @@ public class MainActivity extends AppCompatActivity {
         playerOne = (EditText) findViewById(R.id.editTextplayerOne);
         playerTwo = (EditText) findViewById(R.id.editTextplayerTwo);
         numberOfTournamentDays = (EditText) findViewById(R.id.editTextNumberTournamentDays);
+
+        Spinner spinner = (Spinner) findViewById(R.id.spinner);
+
+        spinner.setOnItemClickListener(this);
+
+        List selectnumberOfTournamentDays = new ArrayList<>();
+        selectnumberOfTournamentDays.add("5 Tournament Days");
+        selectnumberOfTournamentDays.add("10 Tournament Days");
+        selectnumberOfTournamentDays.add("15 Tournament Days");
+        selectnumberOfTournamentDays.add("20 Tournament Days");
+
+        ArrayAdapter dataAdapter = new ArrayAdapter(getActivity(),
+        android.R.layout.simple_spinner_item,selectnumberOfTournamentDays);
+
+        dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+        spinner.setAdapter(dataAdapter);
 
         buttonStartTournament.setOnClickListener(new View.OnClickListener() {
             @Override
