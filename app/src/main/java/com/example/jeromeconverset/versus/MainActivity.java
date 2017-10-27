@@ -25,7 +25,7 @@ import static android.R.attr.data;
 import static android.R.attr.value;
 
 
-public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
+public class MainActivity extends Activity implements OnItemSelectedListener  {
     public Tournament tournament;
     public TextView textViewContent;
     public Button buttonStartTournament;
@@ -48,7 +48,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
         Spinner spinner = (Spinner) findViewById(R.id.spinner);
 
-        spinner.setOnItemClickListener(this);
+        spinner.setOnItemSelectedListener(this);
 
         List selectnumberOfTournamentDays = new ArrayList<>();
         selectnumberOfTournamentDays.add("5 Tournament Days");
