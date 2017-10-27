@@ -1,5 +1,6 @@
 package com.example.jeromeconverset.versus;
 
+import android.content.ClipData;
 import android.renderscript.Sampler;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
@@ -22,10 +23,11 @@ import com.example.jeromeconverset.versus.model.Player;
 import com.example.jeromeconverset.versus.model.Tournament;
 
 import static android.R.attr.data;
+import static android.R.attr.publicKey;
 import static android.R.attr.value;
 
 
-public class MainActivity extends Activity implements OnItemSelectedListener  {
+public class MainActivity extends AppCompatActivity implements OnItemSelectedListener  {
     public Tournament tournament;
     public TextView textViewContent;
     public Button buttonStartTournament;
@@ -34,10 +36,13 @@ public class MainActivity extends Activity implements OnItemSelectedListener  {
     public EditText playerTwo;
     public EditText numberOfTournamentDays;
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
 
         textViewContent = (TextView) findViewById(R.id.tv_content);
         buttonStartTournament = (Button) findViewById(R.id.btn_start_tournament);
@@ -103,9 +108,6 @@ public class MainActivity extends Activity implements OnItemSelectedListener  {
             }
         });
 
-
-
-
     }
 
     public void startTournament(int numberOfTournament, String playerOneFirstName, String playerTwoFirstName) {
@@ -119,5 +121,13 @@ public class MainActivity extends Activity implements OnItemSelectedListener  {
         tournament.addTournamentDay();
     }
 
+    @Override
+    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+        String item = parent.getItemAtPosition(position).toString();
+
+       Toast.makeText(parent.getContext(), "selected " + item, Toast.LENGTH_LONG).show();
+
+
+    }
 }
 
