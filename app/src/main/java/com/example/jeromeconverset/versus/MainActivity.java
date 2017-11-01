@@ -6,9 +6,13 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.TextView;
 import com.example.jeromeconverset.versus.model.Player;
 import com.example.jeromeconverset.versus.model.Tournament;
+
+import java.util.List;
+
 
 public class MainActivity extends AppCompatActivity {
 
@@ -33,6 +37,10 @@ public class MainActivity extends AppCompatActivity {
         playerOne = (EditText) findViewById(R.id.editTextplayerOne);
         playerTwo = (EditText) findViewById(R.id.editTextplayerTwo);
         numberOfTournamentDays = (EditText) findViewById(R.id.editTextNumberTournamentDays);
+
+
+        Spinner spinner = (Spinner) findViewById(R.id.selectNumberOfTournamentDays);
+
 
         buttonStartTournament.setOnClickListener(new View.OnClickListener() {
             @Override
