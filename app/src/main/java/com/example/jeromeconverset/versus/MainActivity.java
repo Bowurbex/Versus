@@ -1,33 +1,17 @@
 package com.example.jeromeconverset.versus;
 
-import android.content.ClipData;
-import android.renderscript.Sampler;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-import java.util.ArrayList;
-import java.util.List;
-import android.app.Activity;
-import android.widget.ArrayAdapter;
-import android.widget.Spinner;
-import android.widget.Toast;
-import android.widget.AdapterView.OnItemSelectedListener;
-import android.widget.AdapterView.OnItemClickListener;
-
 import com.example.jeromeconverset.versus.model.Player;
 import com.example.jeromeconverset.versus.model.Tournament;
 
-import static android.R.attr.data;
-import static android.R.attr.publicKey;
-import static android.R.attr.value;
+public class MainActivity extends AppCompatActivity {
 
-
-public class MainActivity extends AppCompatActivity implements OnItemSelectedListener  {
     public Tournament tournament;
     public TextView textViewContent;
     public Button buttonStartTournament;
@@ -35,7 +19,6 @@ public class MainActivity extends AppCompatActivity implements OnItemSelectedLis
     public EditText playerOne;
     public EditText playerTwo;
     public EditText numberOfTournamentDays;
-
 
 
     @Override
@@ -50,22 +33,6 @@ public class MainActivity extends AppCompatActivity implements OnItemSelectedLis
         playerOne = (EditText) findViewById(R.id.editTextplayerOne);
         playerTwo = (EditText) findViewById(R.id.editTextplayerTwo);
         numberOfTournamentDays = (EditText) findViewById(R.id.editTextNumberTournamentDays);
-
-        Spinner spinner = (Spinner) findViewById(R.id.spinner);
-
-        spinner.setOnItemSelectedListener(this);
-
-        List selectnumberOfTournamentDays = new ArrayList<>();
-        selectnumberOfTournamentDays.add("5 Tournament Days");
-        selectnumberOfTournamentDays.add("10 Tournament Days");
-        selectnumberOfTournamentDays.add("15 Tournament Days");
-        selectnumberOfTournamentDays.add("20 Tournament Days");
-
-        ArrayAdapter dataAdapter = new ArrayAdapter(this, android.R.layout.simple_spinner_item, selectnumberOfTournamentDays);
-
-        dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-
-        spinner.setAdapter(dataAdapter);
 
         buttonStartTournament.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -121,13 +88,8 @@ public class MainActivity extends AppCompatActivity implements OnItemSelectedLis
         tournament.addTournamentDay();
     }
 
-    @Override
-    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-        String item = parent.getItemAtPosition(position).toString();
-
-       Toast.makeText(parent.getContext(), "selected " + item, Toast.LENGTH_LONG).show();
 
 
     }
-}
+
 
