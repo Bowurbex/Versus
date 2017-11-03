@@ -24,7 +24,6 @@ public class MainActivity extends AppCompatActivity {
     public EditText playerTwo;
     public EditText numberOfTournamentDays;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,7 +36,9 @@ public class MainActivity extends AppCompatActivity {
         playerOne = (EditText) findViewById(R.id.editTextplayerOne);
         playerTwo = (EditText) findViewById(R.id.editTextplayerTwo);
         numberOfTournamentDays = (EditText) findViewById(R.id.editTextNumberTournamentDays);
-        
+
+        Spinner spinner = (Spinner) findViewById(R.id.select_notd);
+
 
         buttonStartTournament.setOnClickListener(new View.OnClickListener() {
             @Override
