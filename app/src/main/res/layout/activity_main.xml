@@ -80,7 +80,7 @@
                 app:layout_constraintTop_toTopOf="parent"/>
 
             <Spinner
-                android:id="@+id/spinner"
+                android:id="@+id/select_notd"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="8dp"
